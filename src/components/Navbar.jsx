@@ -37,7 +37,7 @@ const Navbar = () => {
                                 : "text-gray-600 hover:text-gray-900"
                         }`}
                     >
-                        Time to Program
+                        Prasad Kulkarni
                     </span>
                 </motion.div>
 
