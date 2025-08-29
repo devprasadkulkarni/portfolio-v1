@@ -289,6 +289,277 @@ const HeroSection = () => {
                             >
                                 React
                             </span>
+                            <span
+                                className={
+                                    toggleDarkMode
+                                        ? "text-gray-700"
+                                        : "text-gray-400"
+                                }
+                            >
+                                •
+                            </span>
+                            <span
+                                className={
+                                    toggleDarkMode
+                                        ? "text-gray-600"
+                                        : "text-gray-500"
+                                }
+                            >
+                                Tailwind
+                            </span>
+                            <span
+                                className={
+                                    toggleDarkMode
+                                        ? "text-gray-700"
+                                        : "text-gray-400"
+                                }
+                            >
+                                •
+                            </span>
+                            <span
+                                className={
+                                    toggleDarkMode
+                                        ? "text-gray-600"
+                                        : "text-gray-500"
+                                }
+                            >
+                                HTML
+                            </span>
+                        </motion.div>
+                    </div>
+
+                    {/* Desktop Layout - Split */}
+                    <div className="hidden lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+                        {/* Left Column - Content */}
+                        <motion.div
+                            initial="hidden"
+                            animate="visible"
+                            variants={containerVariants}
+                            className="text-left"
+                        >
+                            <motion.div
+                                variants={textVariants}
+                                className={`text-sm uppercase tracking-widest mb-6 ${
+                                    toggleDarkMode
+                                        ? "text-gray-500"
+                                        : "text-gray-600"
+                                }`}
+                            >
+                                Front End Developer
+                            </motion.div>
+                            <motion.h1
+                                variants={itemVariants}
+                                className="text-5xl xl:text-7xl font-light mb-8 leading-tight"
+                            >
+                                <span
+                                    className={`${
+                                        toggleDarkMode
+                                            ? "text-white"
+                                            : "text-gray-900"
+                                    }`}
+                                >
+                                    Building digital
+                                </span>
+                                <br />
+                                <span className="text-blue-500 font-medium">
+                                    experiences
+                                </span>
+                                <br />
+                                <span
+                                    className={
+                                        toggleDarkMode
+                                            ? "text-white"
+                                            : "text-gray-900"
+                                    }
+                                >
+                                    that matter
+                                </span>
+                            </motion.h1>
+                            <motion.p
+                                variants={itemVariants}
+                                className={`text-xl mb-12 font-light leading-relaxed max-w-lg ${
+                                    toggleDarkMode
+                                        ? "text-gray-400"
+                                        : "text-gray-600"
+                                }`}
+                            >
+                                I craft beautiful, functional web applications
+                                with modern technologies and thoughtful user
+                                experiences.
+                            </motion.p>
+                            {/* CTA Buttons - Desktop */}
+                            <motion.div
+                                variants={itemVariants}
+                                className="flex gap-6 mb-8"
+                            >
+                                <motion.button
+                                    whileHover={{ y: -2 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    onClick={() => scrollToSection("work")}
+                                    className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300"
+                                >
+                                    View Work
+                                </motion.button>
+                                <motion.button
+                                    whileHover={{ y: -2 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    onClick={() => scrollToSection("contact")}
+                                    className={`border px-8 py-4 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300 ${
+                                        toggleDarkMode
+                                            ? "border-gray-700 hover:border-gray-600 text-gray-300"
+                                            : "border-gray-300 hover:border-gray-400 text-gray-700"
+                                    }`}
+                                >
+                                    Get in Touch
+                                </motion.button>
+                            </motion.div>
+
+                            {/* Social Links - Desktop */}
+                            <motion.div
+                                variants={itemVariants}
+                                className="flex space-x-6 mb-12"
+                            >
+                                {[
+                                    {
+                                        icon: FiGithub,
+                                        href: "#",
+                                    },
+                                    {
+                                        icon: FiLinkedin,
+                                        href: "#",
+                                    },
+                                    {
+                                        icon: Mail,
+                                        href: "#",
+                                    },
+                                ].map((social, index) => (
+                                    <motion.a
+                                        key={index}
+                                        href={social.href}
+                                        whileHover={{ y: -3, scale: 1.1 }}
+                                        className={`p-3 rounded-full transition-colors ${
+                                            toggleDarkMode
+                                                ? "text-gray-400 hover:text-white hover:bg-gray-800"
+                                                : "text-gray-600 hover:text-gray-900 hover:bg-gray-200"
+                                        }`}
+                                    >
+                                        <social.icon size={20} />
+                                    </motion.a>
+                                ))}
+                            </motion.div>
+                        </motion.div>
+                        {/* Right Column - Profile Image */}
+                        <motion.div
+                            initial="hidden"
+                            animate="visible"
+                            variants={imageVariants}
+                            className="flex justify-center lg:justify-end"
+                        >
+                            <div className="relative">
+                                {/* Tech Stack - Desktop */}
+                                <motion.div
+                                    variants={itemVariants}
+                                    className="flex items-center space-x-8 text-md uppercase tracking-widest absolute -top-16 -left-28"
+                                >
+                                    <span
+                                        className={
+                                            toggleDarkMode
+                                                ? "text-gray-600"
+                                                : "text-gray-500"
+                                        }
+                                    >
+                                        JavaScript
+                                    </span>
+                                    <span
+                                        className={
+                                            toggleDarkMode
+                                                ? "text-gray-700"
+                                                : "text-gray-400"
+                                        }
+                                    >
+                                        •
+                                    </span>
+                                    <span
+                                        className={
+                                            toggleDarkMode
+                                                ? "text-gray-600"
+                                                : "text-gray-500"
+                                        }
+                                    >
+                                        React
+                                    </span>
+                                    <span
+                                        className={
+                                            toggleDarkMode
+                                                ? "text-gray-700"
+                                                : "text-gray-400"
+                                        }
+                                    >
+                                        •
+                                    </span>
+                                    <span
+                                        className={
+                                            toggleDarkMode
+                                                ? "text-gray-600"
+                                                : "text-gray-500"
+                                        }
+                                    >
+                                        Tailwind
+                                    </span>
+                                    <span
+                                        className={
+                                            toggleDarkMode
+                                                ? "text-gray-700"
+                                                : "text-gray-400"
+                                        }
+                                    >
+                                        •
+                                    </span>
+                                    <span
+                                        className={
+                                            toggleDarkMode
+                                                ? "text-gray-600"
+                                                : "text-gray-500"
+                                        }
+                                    >
+                                        HTML
+                                    </span>
+                                </motion.div>
+                                <motion.div
+                                    whileHover={{ scale: 1.02 }}
+                                    className={`w-80 h-96 rounded-3xl overflow-hidden border-4 shadow-2xl ${
+                                        toggleDarkMode
+                                            ? "border-gray-800"
+                                            : "border-gray-300"
+                                    }`}
+                                >
+                                    <img
+                                        src={PROFILE_PIC}
+                                        alt="Profile"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </motion.div>
+
+                                {/* Decorative Elements */}
+                                <motion.div
+                                    animate={{ rotate: 360 }}
+                                    transition={{
+                                        duration: 20,
+                                        repeat: Infinity,
+                                        ease: "linear",
+                                    }}
+                                    className="absolute -inset-4 rounded-3xl border border-blue-500/20"
+                                />
+                                <motion.div
+                                    animate={{ rotate: -360 }}
+                                    transition={{
+                                        duration: 30,
+                                        repeat: Infinity,
+                                        ease: "linear",
+                                    }}
+                                    className="absolute -inset-8 rounded-3xl border border-purple-500/10"
+                                />
+                            </div>
                         </motion.div>
                     </div>
                 </div>
