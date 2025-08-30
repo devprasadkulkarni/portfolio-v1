@@ -2,8 +2,7 @@ import React, { useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "motion/react";
 import { useTheme } from "../../context/ThemeContext";
 import { containerVariants, itemVariants } from "../../utils/helper";
-import { SKILLS_CATEGORY, STATS, TECH_STACK } from "../../utils/data";
-import { delay } from "motion";
+import { SKILLS_CATEGORY, TECH_STACK } from "../../utils/data";
 
 const SkillsSection = () => {
     const { toggleDarkMode } = useTheme();
