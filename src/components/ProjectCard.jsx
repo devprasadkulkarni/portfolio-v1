@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import { ExternalLink } from "lucide-react";
 import { FiGithub } from "react-icons/fi";
 
-const ProjectCard = ({ project, index, toggleDarkMode }) => {
+const ProjectCard = ({ project, index, isDarkMode }) => {
     const cardVariants = {
         hidden: { y: 20, opacity: 0 },
         visible: {
@@ -26,7 +26,7 @@ const ProjectCard = ({ project, index, toggleDarkMode }) => {
         >
             <div
                 className={`rounded-2xl overflow-hidden border transition-all duration-500 ${
-                    toggleDarkMode ? "" : ""
+                    isDarkMode ? "" : ""
                 }`}
             ></div>
         </motion.div>

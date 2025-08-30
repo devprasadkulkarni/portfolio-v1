@@ -5,7 +5,7 @@ import { containerVariants, itemVariants } from "../../utils/helper";
 import { SKILLS_CATEGORY, TECH_STACK } from "../../utils/data";
 
 const SkillsSection = () => {
-    const { toggleDarkMode } = useTheme();
+    const { isDarkMode } = useTheme();
     const sectionRef = useRef(null);
     const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
@@ -34,7 +34,7 @@ const SkillsSection = () => {
             ref={sectionRef}
             id="skills"
             className={`py-24 px-6 relative overflow-hidden ${
-                toggleDarkMode
+                isDarkMode
                     ? "bg-gray-950 text-white"
                     : "bg-gray-50 text-gray-900"
             }`}
@@ -46,12 +46,12 @@ const SkillsSection = () => {
             >
                 <div
                     className={`absolute top-40 right-1/4 w-72 h-72 rounded-full blur-3xl opacity-5 ${
-                        toggleDarkMode ? "bg-blue-500" : "bg-blue-400"
+                        isDarkMode ? "bg-blue-500" : "bg-blue-400"
                     }`}
                 />
                 <div
                     className={`absolute bottom-40 left-1/4 w-64 h-64 rounded-full blur-3xl opacity-5 ${
-                        toggleDarkMode ? "bg-purple-500" : "bg-purple-400"
+                        isDarkMode ? "bg-purple-500" : "bg-purple-400"
                     }`}
                 />
             </motion.div>
@@ -67,7 +67,7 @@ const SkillsSection = () => {
                     <motion.div
                         variants={itemVariants}
                         className={`text-sm uppercase tracking-widest mb-4 ${
-                            toggleDarkMode ? "text-gray-500" : "text-gray-600"
+                            isDarkMode ? "text-gray-500" : "text-gray-600"
                         }`}
                     >
                         Technical Expertise
@@ -84,7 +84,7 @@ const SkillsSection = () => {
                     <motion.p
                         variants={itemVariants}
                         className={`text-lg max-w-2xl mx-auto font-light ${
-                            toggleDarkMode ? "text-gray-400" : "text-gray-600"
+                            isDarkMode ? "text-gray-400" : "text-gray-600"
                         }`}
                     >
                         A comprehensive toolkit for building modern, scalable
@@ -104,7 +104,7 @@ const SkillsSection = () => {
                             key={category.title}
                             variants={itemVariants}
                             className={`p-8 rounded-2xl border ${
-                                toggleDarkMode
+                                isDarkMode
                                     ? "bg-gray-900/50 border-gray-800 backdrop-blur-sm"
                                     : "bg-white/80 border-gray-200 backdrop-blur-sm"
                             }`}
@@ -113,7 +113,7 @@ const SkillsSection = () => {
                             <div className="flex items-center mb-6">
                                 <div
                                     className={`p-3 rounded-xl mr-4 ${
-                                        toggleDarkMode
+                                        isDarkMode
                                             ? "bg-gray-800"
                                             : "bg-gray-100"
                                     }`}
@@ -129,7 +129,7 @@ const SkillsSection = () => {
                                     </h3>
                                     <p
                                         className={`text-sm ${
-                                            toggleDarkMode
+                                            isDarkMode
                                                 ? "text-gray-400"
                                                 : "text-gray-600"
                                         }`}
@@ -149,7 +149,7 @@ const SkillsSection = () => {
                                             </span>
                                             <span
                                                 className={`text-xs ${
-                                                    toggleDarkMode
+                                                    isDarkMode
                                                         ? "text-gray-500"
                                                         : "text-gray-600"
                                                 }`}
@@ -159,7 +159,7 @@ const SkillsSection = () => {
                                         </div>
                                         <div
                                             className={`h-2 rounded-full overflow-hidden ${
-                                                toggleDarkMode
+                                                isDarkMode
                                                     ? "bg-gray-800"
                                                     : "bg-gray-200"
                                             }`}
@@ -210,7 +210,7 @@ const SkillsSection = () => {
                                 key={tech}
                                 whileHover={{ y: -2, scale: 1.05 }}
                                 className={`px-4 py-2 text-sm rounded-full border transition-all duration-300 ${
-                                    toggleDarkMode
+                                    isDarkMode
                                         ? "bg-gray-900 border-gray-700 text-gray-300 hover:border-gray-600"
                                         : "bg-white border-gray-300 text-gray-700 hover:border-gray-400"
                                 }`}

@@ -7,7 +7,7 @@ import { containerVariants, itemVariants } from "../../utils/helper";
 import ProjectCard from "../ProjectCard";
 
 const ProjectsSection = () => {
-    const { toggleDarkMode } = useTheme();
+    const { isDarkMode } = useTheme();
     const sectionRef = useRef(null);
     const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
@@ -16,7 +16,7 @@ const ProjectsSection = () => {
             id="work"
             ref={sectionRef}
             className={`py-24 px-6 relative overflow-hidden ${
-                toggleDarkMode
+                isDarkMode
                     ? "bg-gray-950 text-white"
                     : "bg-gray-50 text-gray-900"
             }`}
@@ -25,12 +25,12 @@ const ProjectsSection = () => {
             <div className="absolute inset-0 overflow-hidden">
                 <div
                     className={`absolute top-20 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-5 ${
-                        toggleDarkMode ? "bg-blue-500" : "bg-blue-400"
+                        isDarkMode ? "bg-blue-500" : "bg-blue-400"
                     }`}
                 />
                 <div
                     className={`absolute bottom-20 right-1/4 w-80 h-80 rounded-full blur-3xl opacity-5 ${
-                        toggleDarkMode ? "bg-purple-500" : "bg-purple-400"
+                        isDarkMode ? "bg-purple-500" : "bg-purple-400"
                     }`}
                 />
             </div>
@@ -45,7 +45,7 @@ const ProjectsSection = () => {
                     <motion.div
                         variants={itemVariants}
                         className={`text-sm uppercase tracking-widest mb-4 ${
-                            toggleDarkMode ? "text-gray-500" : "text-gray-600"
+                            isDarkMode ? "text-gray-500" : "text-gray-600"
                         }`}
                     >
                         Featured Work
@@ -62,7 +62,7 @@ const ProjectsSection = () => {
                     <motion.p
                         variants={itemVariants}
                         className={`text-lg max-w-2xl mx-auto font-light ${
-                            toggleDarkMode ? "text-gray-400" : "text-gray-600"
+                            isDarkMode ? "text-gray-400" : "text-gray-600"
                         }`}
                     >
                         A collection of projects that showcase my expertise in
@@ -82,7 +82,7 @@ const ProjectsSection = () => {
                             key={project.id}
                             project={project}
                             index={index}
-                            toggleDarkMode={toggleDarkMode}
+                            isDarkMode={isDarkMode}
                         />
                     ))}
                 </motion.div>

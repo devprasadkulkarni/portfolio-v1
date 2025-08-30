@@ -7,7 +7,7 @@ import { ArrowDown, Mail } from "lucide-react";
 import { containerVariants, itemVariants } from "../../utils/helper";
 
 const HeroSection = () => {
-    const { toggleDarkMode } = useTheme();
+    const { isDarkMode } = useTheme();
     const { scrollY } = useScroll();
     const heroY = useTransform(scrollY, [0, 500], [0, -100]);
 
@@ -46,7 +46,7 @@ const HeroSection = () => {
     return (
         <div
             className={`min-h-screen transition-all duration-500 ${
-                toggleDarkMode
+                isDarkMode
                     ? "bg-gray-950 text-white"
                     : "bg-gray-50 text-gray-900"
             }`}
@@ -66,7 +66,7 @@ const HeroSection = () => {
                             ease: "linear",
                         }}
                         className={`absolute top-20 right-20 w-64 h-64 rounded-full blur-3xl opacity-10 ${
-                            toggleDarkMode ? "bg-blue-500" : "bg-blue-400"
+                            isDarkMode ? "bg-blue-500" : "bg-blue-400"
                         }`}
                     />
                     <motion.div
@@ -80,7 +80,7 @@ const HeroSection = () => {
                             ease: "linear",
                         }}
                         className={`absolute bottom-20 left-20 w-48 h-48 rounded-full blur-3xl opacity-10 ${
-                            toggleDarkMode ? "bg-purple-500" : "bg-purple-400"
+                            isDarkMode ? "bg-purple-500" : "bg-purple-400"
                         }`}
                     />
                 </div>
@@ -103,7 +103,7 @@ const HeroSection = () => {
                                     <motion.div
                                         whileHover={{ scale: 1.05 }}
                                         className={`w-full h-32 rounded-2xl overflow-hidden border-4 shadow-2xl ${
-                                            toggleDarkMode
+                                            isDarkMode
                                                 ? "border-gray-800"
                                                 : "border-gray-300"
                                         } 
@@ -132,7 +132,7 @@ const HeroSection = () => {
                             <motion.div
                                 variants={textVariants}
                                 className={`text-sm uppercase tracking-widest ${
-                                    toggleDarkMode
+                                    isDarkMode
                                         ? "text-gray-500"
                                         : "text-gray-600"
                                 }mb-4`}
@@ -146,7 +146,7 @@ const HeroSection = () => {
                             >
                                 <span
                                     className={`${
-                                        toggleDarkMode
+                                        isDarkMode
                                             ? "text-white"
                                             : "text-gray-900"
                                     }`}
@@ -159,7 +159,7 @@ const HeroSection = () => {
                                 <br />
                                 <span
                                     className={
-                                        toggleDarkMode
+                                        isDarkMode
                                             ? "text-white"
                                             : "text-gray-900"
                                     }
@@ -171,7 +171,7 @@ const HeroSection = () => {
                             <motion.p
                                 variants={itemVariants}
                                 className={`text-base md:text-lg mb-8 max-w-xl mx-auto font-light leading-relaxed ${
-                                    toggleDarkMode
+                                    isDarkMode
                                         ? "text-gray-400"
                                         : "text-gray-600"
                                 }`}
@@ -200,7 +200,7 @@ const HeroSection = () => {
                                     whileTap={{ scale: 0.98 }}
                                     onClick={() => scrollToSection("contact")}
                                     className={`border px-8 py-3 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300 ${
-                                        toggleDarkMode
+                                        isDarkMode
                                             ? "border-gray-700 hover:border-gray-600 text-gray-300"
                                             : "border-gray-300 hover:border-gray-400 text-gray-700"
                                     }`}
@@ -226,7 +226,7 @@ const HeroSection = () => {
                                     href={social.href}
                                     whileHover={{ y: -3, scale: 1.1 }}
                                     className={`p-3 rounded-full transition-colors ${
-                                        toggleDarkMode
+                                        isDarkMode
                                             ? "text-gray-400 hover:text-white hover:bg-gray-800"
                                             : "text-gray-600 hover:text-gray-900 hover:bg-gray-200"
                                     }`}
@@ -243,7 +243,7 @@ const HeroSection = () => {
                         >
                             <span
                                 className={
-                                    toggleDarkMode
+                                    isDarkMode
                                         ? "text-gray-600"
                                         : "text-gray-500"
                                 }
@@ -252,7 +252,7 @@ const HeroSection = () => {
                             </span>
                             <span
                                 className={
-                                    toggleDarkMode
+                                    isDarkMode
                                         ? "text-gray-700"
                                         : "text-gray-400"
                                 }
@@ -261,7 +261,7 @@ const HeroSection = () => {
                             </span>
                             <span
                                 className={
-                                    toggleDarkMode
+                                    isDarkMode
                                         ? "text-gray-600"
                                         : "text-gray-500"
                                 }
@@ -270,7 +270,7 @@ const HeroSection = () => {
                             </span>
                             <span
                                 className={
-                                    toggleDarkMode
+                                    isDarkMode
                                         ? "text-gray-700"
                                         : "text-gray-400"
                                 }
@@ -279,7 +279,7 @@ const HeroSection = () => {
                             </span>
                             <span
                                 className={
-                                    toggleDarkMode
+                                    isDarkMode
                                         ? "text-gray-600"
                                         : "text-gray-500"
                                 }
@@ -288,7 +288,7 @@ const HeroSection = () => {
                             </span>
                             <span
                                 className={
-                                    toggleDarkMode
+                                    isDarkMode
                                         ? "text-gray-700"
                                         : "text-gray-400"
                                 }
@@ -297,7 +297,7 @@ const HeroSection = () => {
                             </span>
                             <span
                                 className={
-                                    toggleDarkMode
+                                    isDarkMode
                                         ? "text-gray-600"
                                         : "text-gray-500"
                                 }
@@ -319,7 +319,7 @@ const HeroSection = () => {
                             <motion.div
                                 variants={textVariants}
                                 className={`text-sm uppercase tracking-widest mb-6 ${
-                                    toggleDarkMode
+                                    isDarkMode
                                         ? "text-gray-500"
                                         : "text-gray-600"
                                 }`}
@@ -332,7 +332,7 @@ const HeroSection = () => {
                             >
                                 <span
                                     className={`${
-                                        toggleDarkMode
+                                        isDarkMode
                                             ? "text-white"
                                             : "text-gray-900"
                                     }`}
@@ -346,7 +346,7 @@ const HeroSection = () => {
                                 <br />
                                 <span
                                     className={
-                                        toggleDarkMode
+                                        isDarkMode
                                             ? "text-white"
                                             : "text-gray-900"
                                     }
@@ -357,7 +357,7 @@ const HeroSection = () => {
                             <motion.p
                                 variants={itemVariants}
                                 className={`text-xl mb-12 font-light leading-relaxed max-w-lg ${
-                                    toggleDarkMode
+                                    isDarkMode
                                         ? "text-gray-400"
                                         : "text-gray-600"
                                 }`}
@@ -384,7 +384,7 @@ const HeroSection = () => {
                                     whileTap={{ scale: 0.98 }}
                                     onClick={() => scrollToSection("contact")}
                                     className={`border px-8 py-4 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300 ${
-                                        toggleDarkMode
+                                        isDarkMode
                                             ? "border-gray-700 hover:border-gray-600 text-gray-300"
                                             : "border-gray-300 hover:border-gray-400 text-gray-700"
                                     }`}
@@ -417,7 +417,7 @@ const HeroSection = () => {
                                         href={social.href}
                                         whileHover={{ y: -3, scale: 1.1 }}
                                         className={`p-3 rounded-full transition-colors ${
-                                            toggleDarkMode
+                                            isDarkMode
                                                 ? "text-gray-400 hover:text-white hover:bg-gray-800"
                                                 : "text-gray-600 hover:text-gray-900 hover:bg-gray-200"
                                         }`}
@@ -442,7 +442,7 @@ const HeroSection = () => {
                                 >
                                     <span
                                         className={
-                                            toggleDarkMode
+                                            isDarkMode
                                                 ? "text-gray-600"
                                                 : "text-gray-500"
                                         }
@@ -451,7 +451,7 @@ const HeroSection = () => {
                                     </span>
                                     <span
                                         className={
-                                            toggleDarkMode
+                                            isDarkMode
                                                 ? "text-gray-700"
                                                 : "text-gray-400"
                                         }
@@ -460,7 +460,7 @@ const HeroSection = () => {
                                     </span>
                                     <span
                                         className={
-                                            toggleDarkMode
+                                            isDarkMode
                                                 ? "text-gray-600"
                                                 : "text-gray-500"
                                         }
@@ -469,7 +469,7 @@ const HeroSection = () => {
                                     </span>
                                     <span
                                         className={
-                                            toggleDarkMode
+                                            isDarkMode
                                                 ? "text-gray-700"
                                                 : "text-gray-400"
                                         }
@@ -478,7 +478,7 @@ const HeroSection = () => {
                                     </span>
                                     <span
                                         className={
-                                            toggleDarkMode
+                                            isDarkMode
                                                 ? "text-gray-600"
                                                 : "text-gray-500"
                                         }
@@ -487,7 +487,7 @@ const HeroSection = () => {
                                     </span>
                                     <span
                                         className={
-                                            toggleDarkMode
+                                            isDarkMode
                                                 ? "text-gray-700"
                                                 : "text-gray-400"
                                         }
@@ -496,7 +496,7 @@ const HeroSection = () => {
                                     </span>
                                     <span
                                         className={
-                                            toggleDarkMode
+                                            isDarkMode
                                                 ? "text-gray-600"
                                                 : "text-gray-500"
                                         }
@@ -507,7 +507,7 @@ const HeroSection = () => {
                                 <motion.div
                                     whileHover={{ scale: 1.02 }}
                                     className={`w-80 h-96 rounded-3xl overflow-hidden border-4 shadow-2xl ${
-                                        toggleDarkMode
+                                        isDarkMode
                                             ? "border-gray-800"
                                             : "border-gray-300"
                                     }`}
@@ -551,7 +551,7 @@ const HeroSection = () => {
                     <ArrowDown
                         size={20}
                         className={
-                            toggleDarkMode ? "text-gray-600" : "text-gray-400"
+                            isDarkMode ? "text-gray-600" : "text-gray-400"
                         }
                     />
                 </motion.div>
