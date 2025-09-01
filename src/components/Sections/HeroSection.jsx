@@ -188,7 +188,6 @@ const HeroSection = () => {
                                 className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
                             >
                                 <motion.button
-                                    whileHover={{ y: -2 }}
                                     whileTap={{ scale: 0.98 }}
                                     onClick={() => scrollToSection("work")}
                                     className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300"
@@ -196,7 +195,6 @@ const HeroSection = () => {
                                     View Work
                                 </motion.button>
                                 <motion.button
-                                    whileHover={{ y: -2 }}
                                     whileTap={{ scale: 0.98 }}
                                     onClick={() => scrollToSection("contact")}
                                     className={`border px-8 py-3 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300 ${
@@ -372,18 +370,16 @@ const HeroSection = () => {
                                 className="flex gap-6 mb-8"
                             >
                                 <motion.button
-                                    whileHover={{ y: -2 }}
                                     whileTap={{ scale: 0.98 }}
                                     onClick={() => scrollToSection("work")}
-                                    className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300"
+                                    className="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300"
                                 >
                                     View Work
                                 </motion.button>
                                 <motion.button
-                                    whileHover={{ y: -2 }}
                                     whileTap={{ scale: 0.98 }}
                                     onClick={() => scrollToSection("contact")}
-                                    className={`border px-8 py-4 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300 ${
+                                    className={`cursor-pointer border px-8 py-4 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300 ${
                                         isDarkMode
                                             ? "border-gray-700 hover:border-gray-600 text-gray-300"
                                             : "border-gray-300 hover:border-gray-400 text-gray-700"
@@ -401,20 +397,21 @@ const HeroSection = () => {
                                 {[
                                     {
                                         icon: FiGithub,
-                                        href: "#",
+                                        href: "https://github.com/devprasadkulkarni",
                                     },
                                     {
                                         icon: FiLinkedin,
-                                        href: "#",
+                                        href: "https://www.linkedin.com/in/devprasadkulkarni/",
                                     },
                                     {
                                         icon: Mail,
-                                        href: "#",
+                                        href: "mailto:dev.prasad.kulkarni@gmail.com",
                                     },
                                 ].map((social, index) => (
                                     <motion.a
                                         key={index}
                                         href={social.href}
+                                        target="_blank"
                                         whileHover={{ y: -3, scale: 1.1 }}
                                         className={`p-3 rounded-full transition-colors ${
                                             isDarkMode

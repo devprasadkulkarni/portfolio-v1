@@ -155,9 +155,9 @@ const ContactSection = () => {
 
                                 <motion.button
                                     disabled={isSubmitting}
-                                    whileHover={{ y: -2, scale: 1.02 }}
+                                    whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
-                                    className="w-full bg-blue-500 hover:bg-blue-600 disabled:bg-blue-400 text-white py-4 rounded-xl text-sm uppercase tracking-wider font-medium transition-all duration-300 flex items-center justify-center space-x-2"
+                                    className="cursor-pointer w-full bg-blue-500 hover:bg-blue-600 disabled:bg-blue-400 text-white py-4 rounded-xl text-sm uppercase tracking-wider font-medium transition-all duration-300 flex items-center justify-center space-x-2"
                                     onClick={handleSubmit}
                                 >
                                     {isSubmitting ? (
@@ -253,7 +253,7 @@ const ContactSection = () => {
                                         rel="noopener noreferrer"
                                         whileHover={{ scale: 1.05, y: -2 }}
                                         whileTap={{ scale: 0.95 }}
-                                        className={`flex items-center space-x-3 p-4 rounded-xl border transition-all duration-300 ${
+                                        className={`flex items-center space-x-3 p-4 rounded-xl border transition-colors ${
                                             isDarkMode
                                                 ? "bg-gray-800/50 border-gray-700 hover:border-gray-600"
                                                 : "bg-white/80 border-gray-200 hover:border-gray-300"

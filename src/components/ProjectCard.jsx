@@ -48,7 +48,7 @@ const ProjectCard = ({ project, index, isDarkMode }) => {
                     )}
 
                     {/* Category Badge */}
-                    <div className="absolute top-4 left-4">
+                    {/* <div className="absolute top-4 left-4">
                         <span
                             className={`text-xs px-3 py-1 rounded-full font-medium backdrop-blur-sm ${
                                 isDarkMode
@@ -58,31 +58,28 @@ const ProjectCard = ({ project, index, isDarkMode }) => {
                         >
                             {project.category}
                         </span>
-                    </div>
+                    </div> */}
 
                     {/* Hover Overlay with CTA buttons */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         whileHover={{ opacity: 1 }}
-                        transition={{ duration: 0.3 }}
                         className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center space-x-4"
                     >
                         <motion.a
                             href={project.liveURL}
-                            initial={{ y: 20, opacity: 0.5 }}
-                            whileHover={{ y: 0, opacity: 1, scale: 1.05 }}
-                            transition={{ duration: 0.3, delay: 0.1 }}
-                            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center space-x-2 text-sm font-medium transition-colors"
+                            initial={{ opacity: 0.5 }}
+                            whileHover={{ opacity: 1, scale: 1.05 }}
+                            className="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center space-x-2 text-sm font-medium transition-colors"
                         >
                             <ExternalLink size={16} />
                             <span>Live Demo</span>
                         </motion.a>
                         <motion.a
                             href={project.githubUrl}
-                            initial={{ y: 20, opacity: 0.5 }}
-                            whileHover={{ y: 0, opacity: 1, scale: 1.05 }}
-                            transition={{ duration: 0.3, delay: 0.2 }}
-                            className={`border-2 border-white text-white hover:bg-white hover:text-gray-900 px-4 py-2 rounded-full flex items-center space-x-2 text-sm font-medium transition-all`}
+                            initial={{ opacity: 0.5 }}
+                            whileHover={{ opacity: 1, scale: 1.05 }}
+                            className={`border-2 border-white text-white hover:bg-white hover:text-gray-900 px-4 py-2 rounded-full flex items-center space-x-2 text-sm font-medium transition-colors`}
                         >
                             <FiGithub size={16} />
                             <span>GitHub</span>

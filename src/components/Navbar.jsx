@@ -51,7 +51,7 @@ const Navbar = () => {
                                 onClick={() =>
                                     scrollToSection(item.toLocaleLowerCase())
                                 }
-                                className={`text-sm uppercase tracking-wider transition-colors ${
+                                className={`cursor-pointer text-sm uppercase tracking-wider transition-colors ${
                                     isDarkMode
                                         ? "text-gray-400 hover:text-white"
                                         : "text-gray-600 hover:text-gray-900"
@@ -67,7 +67,7 @@ const Navbar = () => {
                         onClick={() =>
                             toggleDarkMode(isDarkMode ? "light" : "dark")
                         }
-                        className={`p-2 rounded-full transition-colors ${
+                        className={`cursor-pointer p-2 rounded-full transition-colors ${
                             isDarkMode
                                 ? "text-gray-400 hover:text-white hover:bg-gray-800"
                                 : "text-gray-600 hover:text-gray-900 hover:bg-gray-200"

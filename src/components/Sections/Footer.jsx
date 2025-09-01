@@ -130,7 +130,7 @@ const Footer = () => {
                             variants={itemVariants}
                             className="flex justify-center space-x-6"
                         >
-                            {socialLinks.map((social, index) => (
+                            {socialLinks.map((social) => (
                                 <motion.a
                                     key={social.name}
                                     href={social.url}
@@ -143,19 +143,12 @@ const Footer = () => {
                                     } ${social.color} `}
                                     whileHover={{
                                         scale: 1.1,
-                                        transition: { duration: 0 },
                                     }}
                                     whileTap={{
                                         scale: 0.95,
-                                        transition: { duration: 0 },
                                     }}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={
-                                        isInView ? { opacity: 1, y: 0 } : {}
-                                    }
-                                    transition={{
-                                        ease: "easeOut",
-                                    }}
+                                    initial={{ opacity: 0 }}
+                                    animate={isInView ? { opacity: 1 } : {}}
                                 >
                                     <social.icon size={20} />
                                 </motion.a>
@@ -166,7 +159,7 @@ const Footer = () => {
                         <motion.div variants={itemVariants}>
                             <motion.button
                                 onClick={scrollToTop}
-                                className={`inline-flex items-center space-x-2 px-4 py-2 rounded-full text-sm font-medium transition-all backdrop-blur-sm border cursor-pointer ${
+                                className={`inline-flex items-center space-x-2 px-4 py-2 rounded-full text-sm font-medium transition-colors backdrop-blur-sm border cursor-pointer ${
                                     isDarkMode
                                         ? "bg-gray-800/50 hover:bg-gray-700/50 text-gray-400 hover:text-white border-gray-700"
                                         : "bg-gray-100/50 hover:bg-gray-200/50 text-gray-600 hover:text-gray-900 border-gray-300"
