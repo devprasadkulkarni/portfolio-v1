@@ -215,13 +215,23 @@ const HeroSection = () => {
                             className="flex justify-center space-x-6 mb-8"
                         >
                             {[
-                                { icon: FiGithub, href: "#" },
-                                { icon: FiLinkedin, href: "#" },
-                                { icon: Mail, href: "#" },
+                                {
+                                    icon: FiGithub,
+                                    href: "https://github.com/devprasadkulkarni",
+                                },
+                                {
+                                    icon: FiLinkedin,
+                                    href: "https://www.linkedin.com/in/devprasadkulkarni/",
+                                },
+                                {
+                                    icon: Mail,
+                                    href: "mailto:dev.prasad.kulkarni@gmail.com",
+                                },
                             ].map((social, index) => (
                                 <motion.a
                                     key={index}
                                     href={social.href}
+                                    target="_blank"
                                     whileHover={{ y: -3, scale: 1.1 }}
                                     className={`p-3 rounded-full transition-colors ${
                                         isDarkMode
