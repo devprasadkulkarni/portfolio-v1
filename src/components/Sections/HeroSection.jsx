@@ -438,7 +438,7 @@ const HeroSection = () => {
                                 {/* Tech Stack - Desktop */}
                                 <motion.div
                                     variants={itemVariants}
-                                    className="flex items-center space-x-8 text-md uppercase tracking-widest absolute -top-16 -left-28"
+                                    className="flex items-center space-x-8 text-xs uppercase tracking-widest absolute -top-16 -left-28"
                                 >
                                     <span
                                         className={

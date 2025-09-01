@@ -1,4 +1,12 @@
-import { BookOpen, Code2, Coffee, Heart, Mail, MapPin } from "lucide-react";
+import {
+    BookOpen,
+    Code2,
+    Coffee,
+    Heart,
+    Mail,
+    MapPin,
+    Phone,
+} from "lucide-react";
 import qtify from "../assets/qtify.png";
 import netflix_clone from "../assets/netflix-clone.png";
 import youtube_clone from "../assets/youtube-clone.png";
@@ -89,6 +97,7 @@ export const SOCIAL_LINKS = [
     {
         name: "LinkedIn",
         icon: FiLinkedin,
+        url: "#",
         color: "hover:text-blue-400",
         bgColor: "hover:bg-blue-500/10",
     },
@@ -105,5 +114,16 @@ export const CONTACT_INFO = [
     {
         icon: MapPin,
         label: "Location",
+        value: "Pune, IN",
+    },
+    {
+        icon: Mail,
+        label: "Email",
+        value: "dev.prasad.kulkarni@gmail.com",
+    },
+    {
+        icon: Phone,
+        label: "Phone",
+        value: "+91 950 381 7665",
     },
 ];
