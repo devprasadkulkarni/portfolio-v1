@@ -3,6 +3,8 @@ import { motion, useInView, useScroll, useTransform } from "motion/react";
 import { Send } from "lucide-react";
 import { useTheme } from "../../context/ThemeContext";
 import { containerVariants, itemVariants } from "../../utils/helper";
+import TextInput from "../Input/TextInput";
+import SuccessModel from "../SuccessModel";
 
 const ContactSection = () => {
     const { isDarkMode } = useTheme();
@@ -12,6 +14,7 @@ const ContactSection = () => {
         message: "",
     });
     const [showSuccess, setShowSuccess] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const sectionRef = useRef(false);
     const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
@@ -27,7 +30,20 @@ const ContactSection = () => {
         setFormData({ ...formData, [key]: value });
     };
 
-    const handleSubmit = async (e) => {};
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        // Simulate API Call
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+
+        setIsSubmitting(false);
+        setShowSuccess(true);
+        setFormData({ name: "", email: "", message: "" });
+
+        // Auto Hide Success Modal After 3 Seconds
+        setTimeout(() => setShowSuccess(false), 3000);
+    };
 
     return (
         <section
@@ -86,7 +102,93 @@ const ContactSection = () => {
                         can bring your ideas to life.
                     </motion.p>
                 </motion.div>
+
+                <div className="grid lg:grid-cols-2 gap-16 items-start">
+                    {/* Contact Form */}
+                    <motion.div
+                        initial="hidden"
+                        animate={isInView ? "visible" : "hidden"}
+                        variants={containerVariants}
+                    >
+                        <motion.div
+                            variants={itemVariants}
+                            className={`p-8 rounded-2xl border ${
+                                isDarkMode
+                                    ? "bg-gray-800/50 border-gray-700 backdrop-blur-sm"
+                                    : "bg-gray-50/80 border-gray-200 backdrop-blur-sm"
+                            }`}
+                        >
+                            <h3 className="text-2xl font-medium mb-8">
+                                Send me a message
+                            </h3>
+
+                            <div className="space-y-6">
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <TextInput
+                                        isDarkMode={isDarkMode}
+                                        value={formData.name}
+                                        handleInputChange={(text) =>
+                                            handleInputChange("name", text)
+                                        }
+                                        label="Your Name"
+                                    />
+
+                                    <TextInput
+                                        isDarkMode={isDarkMode}
+                                        label="Email Address"
+                                        value={formData.email}
+                                        handleInputChange={(text) =>
+                                            handleInputChange("email", text)
+                                        }
+                                    />
+                                </div>
+                                <TextInput
+                                    isDarkMode={isDarkMode}
+                                    label="Your Message"
+                                    value={formData.message}
+                                    textarea
+                                    handleInputChange={(text) =>
+                                        handleInputChange("message", text)
+                                    }
+                                />
+
+                                <motion.button
+                                    disabled={isSubmitting}
+                                    whileHover={{ y: -2, scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="w-full bg-blue-500 hover:bg-blue-600 disabled:bg-blue-400 text-white py-4 rounded-xl text-sm uppercase tracking-wider font-medium transition-all duration-300 flex items-center justify-center space-x-2"
+                                    onClick={handleSubmit}
+                                >
+                                    {isSubmitting ? (
+                                        <>
+                                            <motion.div
+                                                animate={{ rotate: 360 }}
+                                                transition={{
+                                                    duration: 1,
+                                                    repeat: Infinity,
+                                                    ease: "linear",
+                                                }}
+                                                className="w-4 h-4 border-2 border-white border-t-transparent rounded-full"
+                                            />
+                                            <span>Sending...</span>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Send size={18} />
+                                            <span>Send Message</span>
+                                        </>
+                                    )}
+                                </motion.button>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                </div>
             </div>
+            <SuccessModel
+                showSuccess={showSuccess}
+                setShowSuccess={setShowSuccess}
+                isDarkMode={isDarkMode}
+            />
         </section>
     );
 };
