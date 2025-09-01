@@ -90,14 +90,14 @@ export const SOCIAL_LINKS = [
     {
         name: "GitHub",
         icon: FiGithub,
-        url: "#",
+        url: "https://github.com/devprasadkulkarni",
         color: "hover:text-gray-400",
         bgColor: "hover:bg-gray-800",
     },
     {
         name: "LinkedIn",
         icon: FiLinkedin,
-        url: "#",
+        url: "https://www.linkedin.com/in/devprasadkulkarni/",
         color: "hover:text-blue-400",
         bgColor: "hover:bg-blue-500/10",
     },
