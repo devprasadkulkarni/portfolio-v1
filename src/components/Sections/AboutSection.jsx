@@ -133,11 +133,12 @@ const AboutSection = () => {
                                 }`}
                             >
                                 When I'm not coding, you'll find me exploring
-                                new frameworks, contributing open source, or
-                                mentoring aspiring developers. I love the
-                                constant evolution of web technologies and the
-                                endless possibilities they bring to create
-                                meaningful digital experiences.
+                                new frameworks, experimenting with Linux to
+                                refine my workflows, or diving into the latest
+                                developer tools. I love the constant evolution
+                                of web technologies and the endless
+                                possibilities they bring to create meaningful
+                                digital experiences.
                             </p>
                         </motion.div>
 
