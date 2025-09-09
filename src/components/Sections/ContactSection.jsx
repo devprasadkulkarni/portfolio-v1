@@ -31,19 +31,39 @@ const ContactSection = () => {
         setFormData({ ...formData, [key]: value });
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const onSubmit = async (event) => {
+        event.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate API Call
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        const formDataObj = new FormData(event.target);
+        formDataObj.append(
+            "access_key",
+            "5a0f7783-d1f6-4c59-832a-e99ed6b24205"
+        );
+
+        const object = Object.fromEntries(formDataObj);
+        const json = JSON.stringify(object);
+
+        const res = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+            body: json,
+        }).then((res) => res.json());
 
         setIsSubmitting(false);
-        setShowSuccess(true);
-        setFormData({ name: "", email: "", message: "" });
 
-        // Auto Hide Success Modal After 3 Seconds
-        setTimeout(() => setShowSuccess(false), 3000);
+        if (res.success) {
+            setShowSuccess(true);
+            setFormData({ name: "", email: "", message: "" });
+
+            // auto-hide after 3s
+            setTimeout(() => setShowSuccess(false), 3000);
+        } else {
+            console.error("Submission failed:", res);
+        }
     };
 
     return (
@@ -106,7 +126,8 @@ const ContactSection = () => {
 
                 <div className="grid lg:grid-cols-2 gap-16 items-start">
                     {/* Contact Form */}
-                    <motion.div
+                    <motion.form
+                        onSubmit={onSubmit}
                         initial="hidden"
                         animate={isInView ? "visible" : "hidden"}
                         variants={containerVariants}
@@ -120,7 +141,7 @@ const ContactSection = () => {
                             }`}
                         >
                             <h3 className="text-2xl font-medium mb-8">
-                                Send me a message
+                                Send Me A Message
                             </h3>
 
                             <div className="space-y-6">
@@ -132,6 +153,8 @@ const ContactSection = () => {
                                             handleInputChange("name", text)
                                         }
                                         label="Your Name"
+                                        name="name"
+                                        required
                                     />
 
                                     <TextInput
@@ -141,6 +164,8 @@ const ContactSection = () => {
                                         handleInputChange={(text) =>
                                             handleInputChange("email", text)
                                         }
+                                        name="email"
+                                        required
                                     />
                                 </div>
                                 <TextInput
@@ -151,6 +176,8 @@ const ContactSection = () => {
                                     handleInputChange={(text) =>
                                         handleInputChange("message", text)
                                     }
+                                    name="message"
+                                    required
                                 />
 
                                 <motion.button
@@ -158,7 +185,7 @@ const ContactSection = () => {
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                     className="cursor-pointer w-full bg-blue-500 hover:bg-blue-600 disabled:bg-blue-400 text-white py-4 rounded-xl text-sm uppercase tracking-wider font-medium transition-all duration-300 flex items-center justify-center space-x-2"
-                                    onClick={handleSubmit}
+                                    type="submit"
                                 >
                                     {isSubmitting ? (
                                         <>
@@ -182,7 +209,7 @@ const ContactSection = () => {
                                 </motion.button>
                             </div>
                         </motion.div>
-                    </motion.div>
+                    </motion.form>
 
                     {/* Contact Info & Social Links */}
                     <motion.div

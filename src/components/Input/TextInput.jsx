@@ -4,6 +4,7 @@ const TextInput = ({
     handleInputChange,
     textArea,
     label,
+    ...props
 }) => {
     const InputComponent = textArea ? "textarea" : "input";
 
@@ -15,6 +16,7 @@ const TextInput = ({
                         ? "bg-gray-800/50 border-gray-700 text-white focus:border-blue-500 focus:bg-gray-800/70"
                         : "bg-white/80 border-gray-300 text-gray-900 focus:border-blue-500 focus:bg-white"
                 }`}
+                {...props}
                 value={value}
                 onChange={({ target }) => handleInputChange(target.value)}
             />
